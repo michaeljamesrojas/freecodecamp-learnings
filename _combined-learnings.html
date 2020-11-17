@@ -9,27 +9,125 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 <html>
     <head>
         <title>Combined Learnings</title>
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+        <!--
+            ###Selectors (syntax):
+            >class           .<class-name>
+            >element         <element-name> 
+            >attr value      [<attr-name> = "<value-name>"]
+            >id              #<id-value>
+
+            ###Conflicting styles(priority):
+            >!important declarations first (color: red !important;)
+            >inline styles
+            >CSS styles
+                CSS declaration sequence
+                    latest declaration first
+                Selectors
+                    id
+                    class
+                    inheritance
+        -->
+        <style>
+            :root {
+                --cat-image-border-color: rgb(224, 247, 25);
+                --testVarBorder: 10px;
+                --border-type: solid;
+            }
+
+            /*moving media query above will not follow variable new value*/
+            @media (max-width: 350px) {
+                :root {
+                    --cat-image-border-color: rgb(25, 247, 217);
+                }
+
+                #cat-image {
+                    border-radius: 25%;
+                }    
+            }
+            
+
+            * {
+                /*variables set at root can be overwritten*/
+                --testVarBorder: 1px;
+
+                /*Double declaration for browser compatibilty - most compatible first*/
+                border: red black solid;
+                border: var(--testVarBorder, 12px) #000 var(--border-type);
+                padding: 1em;
+                margin: 1px 3px 6px 9px;
+            }
+
+            .all2 {
+                border-bottom: 3px;
+                padding-top: 1cm;
+                margin: 20px 10px 20px 10px;
+            }
+
+            #cat-image {
+                border-color: var(--cat-image-border-color);
+            }
+
+            body {
+                background-color: rgb(255,255,255);
+                font-family: Lobster;
+            }
+
+            .titles{
+                color: rgb(89, 224, 48);
+            }
+            .semi-title{
+                color: rgb(30, 180, 185);
+                font-family: Lobster, monospace;
+            }
+            p {
+                font-size: 16px;
+            }
+
+            .smaller-image{
+                width: 100px;
+                border-radius: 50%;
+            }
+
+            .thick-green-border {
+                border-color:green;
+                border-width: 10px;
+                border-style: solid;
+            }
+
+            .silver-background {
+                background-color: silver;
+            }
+
+            #cat-photo-form {
+                background-color: green;
+            }
+
+            [href="#footer"] {
+                background-color: rgb(175, 175, 228);
+            }
+        </style>
     </head>
     
     <body>
         
         <h1 style="color: red;">(PLEASE CREATE EXPERIMENTER VERSION)</h1>
-        <h2>CatPhotoApp</h2>
+        <h2 class="titles">CatPhotoApp</h2>
         <main>
             <p>Click here to view more <a href="#footer">Go to Bottom</a>.</p>
             
             <a href="#">
-                <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+                <img id="cat-image" class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
             </a>
             
-            <div>
-                <p>Things cats love:</p>
+            <div class="silver-background">
+                <p class="semi-title">Things cats love:</p>
                 <ul>
                     <li>cat nip</li>
                     <li>laser pointers</li>
                     <li>lasagna</li>
                 </ul>
-                <p>Top 3 things cats hate:</p>
+                <p class="semi-title">Top 3 things cats hate:</p>
                 <ol>
                     <li>flea treatment</li>
                     <li>thunder</li>
@@ -37,7 +135,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                 </ol>
             </div>
             
-            <form action="https://freecatphotoapp.com/submit-cat-photo">
+            <!--Conflicting background color but id is prioritized-->
+            <form class="silver-background" id="cat-photo-form" action="https://freecatphotoapp.com/submit-cat-photo">
                 <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
                 <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label><br>
                 <label for="loving"><input id="loving" type="checkbox" name="personality" value="loving" checked> Loving</label>
