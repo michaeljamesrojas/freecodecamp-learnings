@@ -12,21 +12,26 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
         <!--
             ###Selectors (syntax):
-            >class           .<class-name>
-            >element         <element-name> 
-            >attr value      [<attr-name> = "<value-name>"]
-            >id              #<id-value>
+                >class           .<class-name>
+                >element         <element-name> 
+                >attr value      [<attr-name> = "<value-name>"]
+                >id              #<id-value>
 
             ###Conflicting styles(priority):
-            >!important declarations first (color: red !important;)
-            >inline styles
-            >CSS styles
-                CSS declaration sequence
-                    latest declaration first
-                Selectors
-                    id
-                    class
-                    inheritance
+                >!important declarations first (color: red !important;)
+                >inline styles
+                >CSS styles
+                    CSS declaration sequence
+                        latest declaration first
+                    Selectors
+                        id
+                        class
+                        inheritance
+
+            ###CSS Syntaxes:
+                >animation: name duration timing-function delay iteration-count 
+                direction fill-mode play-state;
+                >box-shadow /*offset-x, offset-Y, blur-radius, spread-radius, color*/
         -->
         <style>
             :root {
@@ -43,6 +48,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
                 #cat-image {
                     border-radius: 25%;
+                    position: absolute;
                 }    
             }
             
@@ -52,14 +58,22 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                 --testVarBorder: 0px;
 
                 /*Double declaration for browser compatibilty - most compatible first*/
-                border: red solid 1px;
+                border: red solid 0px;
                 font-style: italic;
+                text-align: center;
+                align-content: center;
             }
 
             *:hover {
-                box-shadow: -5px 5px 5px 5px gray;
+                box-shadow: -1px 3px 1px 1px gray;
                 position: relative;
-                bottom: 3px;
+                animation: enlarge-selection 0.5s forwards;
+            }
+
+            #warning {
+                position: fixed;
+                top: 0px;
+                
             }
 
             .all2 {
@@ -73,21 +87,17 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
             #cat-image {
                 border-color: var(--cat-image-border-color);
-
-                /*offset-x, offset-Y, blur-radius, spread-radius, color*/
                 box-shadow: -5px 5px 5px 5px black, 10px 5px 5px 5px blue;
                 opacity: 0.5;
             }
 
 
             body {
-                background-color: rgba(128,128,128,0);
                 font-family: Lobster;
             }
 
             .titles{
                 color: rgb(192, 224, 48);
-                text-transform: uppercase;
             }
             .semi-title{
                 color: rgb(30, 180, 185);
@@ -120,14 +130,48 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                 background-color: rgb(175, 175, 228);
             }
 
+            .test-div {
+                align-content: center;
+                text-align: center;
+                padding: 5px;
+                margin: auto;
+            }
 
+            /*#####################KEYFRAMES#################################*/
+            /*#####################KEYFRAMES#################################*/
+            /*#####################KEYFRAMES#################################*/
+            /* keyframes syntax:
+                @keyframes animationname {
+                    keyframes-selector {css-styles;}
+                }*/
+            @keyframes animator-text-transform{
+                from {text-transform: capitalize;}
+                28% {text-transform: lowercase;}
+                42% {text-transform: none;}
+                56% {text-transform: uppercase;}
+                70% {text-transform: inherit;}
+                84% {text-transform: initial;}
+                to {text-transform: unset;}
+            }
+
+            @keyframes enlarge-selection {
+                0%{
+                    position: relative;
+                    box-shadow: 0px 0px 0px 0px black;
+                    bottom: 0;
+                }
+                100%{
+                    box-shadow: 0px 5px 5px 5px black;
+                    bottom: 7px;
+                }
+            }
         </style>
     </head>
     
     <body>
         
         <main>
-            <h1 style="color: red;">(PLEASE CREATE EXPERIMENTER VERSION)</h1>
+            <h1 id="warning" style="color: red;">(PLEASE CREATE STYLE VALUES ANIMATOR)</h1>
 
             <hr>
 
@@ -164,6 +208,81 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                 <input type="text" placeholder="cat photo URL" required>
                 <button type="submit">Submit</button>
             </form>
+
+            <div class="test-div">
+                <div class="test-div">
+                    <div class="test-div">
+                        <div class="test-div">
+                            <div class="test-div">
+                                <div class="test-div">
+                                    <div class="test-div">
+                                        <div class="test-div">
+                                            <div class="test-div">
+                                                <div class="test-div">
+                                                    <div class="test-div">
+                                                        <div class="test-div">
+                                                            <div class="test-div">
+                                                                <div class="test-div">
+                                                                    <div class="test-div">
+                                                                        <div class="test-div">
+                                                                            <div class="test-div">
+                                                                                <div class="test-div">
+                                                                                    <div class="test-div">
+                                                                                        <div class="test-div">
+                                                                                            <div class="test-div">
+                                                                                                <div class="test-div">
+                                                                                                    <div class="test-div">
+                                                                                                        <div class="test-div">
+                                                                                                            <div class="test-div">
+                                                                                                                <div class="test-div">
+                                                                                                                    <div class="test-div">
+                                                                                                                        <div class="test-div">
+                                                                                                                            <div class="test-div">
+                                                                                                                                <div class="test-div">
+                                                                                                                                    <div class="test-div">
+                                                                                                                                        <div class="test-div">
+                                                                                                                                            <div class="test-div">
+                                                                                                                                                <div class="test-div">
+                                                                                                                                                    <div class="test-div">
+                                                                                                                                                        <div class="test-div">
+                                                                                                                                                            <div class="test-div"><p> PYRAMID </p></div>
+                            
+                                                                                                                                                        </div>
+                                                                                                                                                    </div>
+                                                                                                                                                </div>
+                                                                                                                                            </div>
+                                                                                                                                        </div>
+                                                                                                                                    </div>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
         <footer id="footer">Copyrights</footer>
     </body>
