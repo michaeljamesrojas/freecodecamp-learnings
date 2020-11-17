@@ -30,8 +30,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
         -->
         <style>
             :root {
-                --cat-image-border-color: rgb(224, 247, 25);
-                --testVarBorder: 10px;
+                --cat-image-border-color: rgb(162, 247, 25);
+                --testVarBorder: 0px;
                 --border-type: solid;
             }
 
@@ -49,32 +49,45 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
             * {
                 /*variables set at root can be overwritten*/
-                --testVarBorder: 1px;
+                --testVarBorder: 0px;
 
                 /*Double declaration for browser compatibilty - most compatible first*/
-                border: red black solid;
-                border: var(--testVarBorder, 12px) #000 var(--border-type);
-                padding: 1em;
-                margin: 1px 3px 6px 9px;
+                border: red solid 1px;
+                font-style: italic;
+            }
+
+            *:hover {
+                box-shadow: -5px 5px 5px 5px gray;
+                position: relative;
+                bottom: 3px;
             }
 
             .all2 {
+                margin: 3px 3px 3px 3px;
                 border-bottom: 3px;
+                padding: 0em;
                 padding-top: 1cm;
                 margin: 20px 10px 20px 10px;
+                text-decoration: underline;
             }
 
             #cat-image {
                 border-color: var(--cat-image-border-color);
+
+                /*offset-x, offset-Y, blur-radius, spread-radius, color*/
+                box-shadow: -5px 5px 5px 5px black, 10px 5px 5px 5px blue;
+                opacity: 0.5;
             }
 
+
             body {
-                background-color: rgb(255,255,255);
+                background-color: rgba(128,128,128,0);
                 font-family: Lobster;
             }
 
             .titles{
-                color: rgb(89, 224, 48);
+                color: rgb(192, 224, 48);
+                text-transform: uppercase;
             }
             .semi-title{
                 color: rgb(30, 180, 185);
@@ -100,34 +113,40 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
             }
 
             #cat-photo-form {
-                background-color: green;
+                background-color:rgba(0, 0, 255, 128);
             }
 
             [href="#footer"] {
                 background-color: rgb(175, 175, 228);
             }
+
+
         </style>
     </head>
     
     <body>
         
-        <h1 style="color: red;">(PLEASE CREATE EXPERIMENTER VERSION)</h1>
-        <h2 class="titles">CatPhotoApp</h2>
         <main>
-            <p>Click here to view more <a href="#footer">Go to Bottom</a>.</p>
+            <h1 style="color: red;">(PLEASE CREATE EXPERIMENTER VERSION)</h1>
+
+            <hr>
+
+            <h2 class="titles">Cat Photo App</h2>
             
             <a href="#">
                 <img id="cat-image" class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
             </a>
+            <p>Click here to view more <a href="#footer">Go to Bottom</a>.</p>
+            
             
             <div class="silver-background">
-                <p class="semi-title">Things cats love:</p>
+                <p class="semi-title"><strong>Things cats love:</strong></p>
                 <ul>
                     <li>cat nip</li>
                     <li>laser pointers</li>
                     <li>lasagna</li>
                 </ul>
-                <p class="semi-title">Top 3 things cats hate:</p>
+                <p class="semi-title"><u>Top 3 things cats hate:</u></p>
                 <ol>
                     <li>flea treatment</li>
                     <li>thunder</li>
