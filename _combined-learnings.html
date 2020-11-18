@@ -10,160 +10,10 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     <head>
         <title>Combined Learnings</title>
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-        <!--
-            ###Selectors (syntax):
-                >class           .<class-name>
-                >element         <element-name> 
-                >attr value      [<attr-name> = "<value-name>"]
-                >id              #<id-value>
-
-            ###Conflicting styles(priority):
-                >!important declarations first (color: red !important;)
-                >inline styles
-                >CSS styles
-                    CSS declaration sequence
-                        latest declaration first
-                    Selectors
-                        id
-                        class
-                        inheritance
-
-            ###CSS Syntaxes:
-                >animation: name duration timing-function delay iteration-count 
-                direction fill-mode play-state;
-                >box-shadow /*offset-x, offset-Y, blur-radius, spread-radius, color*/
-        -->
+        <link href="styles.css" rel="stylesheet">
         <style>
-            :root {
-                --cat-image-border-color: rgb(162, 247, 25);
-                --testVarBorder: 0px;
-                --border-type: solid;
-            }
-
-            /*moving media query above will not follow variable new value*/
-            @media (max-width: 350px) {
-                :root {
-                    --cat-image-border-color: rgb(25, 247, 217);
-                }
-
-                #cat-image {
-                    border-radius: 25%;
-                    position: absolute;
-                }    
-            }
-            
-
-            * {
-                /*variables set at root can be overwritten*/
-                --testVarBorder: 0px;
-
-                /*Double declaration for browser compatibilty - most compatible first*/
-                border: red solid 0px;
-                font-style: italic;
-                text-align: center;
-                align-content: center;
-            }
-
-            *:hover {
-                box-shadow: -1px 3px 1px 1px gray;
-                position: relative;
-                animation: enlarge-selection 0.5s forwards;
-            }
-
-            #warning {
-                position: fixed;
-                top: 0px;
-                
-            }
-
-            .all2 {
-                margin: 3px 3px 3px 3px;
-                border-bottom: 3px;
-                padding: 0em;
-                padding-top: 1cm;
-                margin: 20px 10px 20px 10px;
-                text-decoration: underline;
-            }
-
-            #cat-image {
-                border-color: var(--cat-image-border-color);
-                box-shadow: -5px 5px 5px 5px black, 10px 5px 5px 5px blue;
-                opacity: 0.5;
-            }
-
-
-            body {
-                font-family: Lobster;
-            }
-
-            .titles{
-                color: rgb(192, 224, 48);
-            }
-            .semi-title{
-                color: rgb(30, 180, 185);
-                font-family: Lobster, monospace;
-            }
-            p {
-                font-size: 16px;
-            }
-
-            .smaller-image{
-                width: 100px;
-                border-radius: 50%;
-            }
-
-            .thick-green-border {
-                border-color:green;
-                border-width: 10px;
-                border-style: solid;
-            }
-
-            .silver-background {
-                background-color: silver;
-            }
-
-            #cat-photo-form {
-                background-color:rgba(0, 0, 255, 128);
-            }
-
-            [href="#footer"] {
-                background-color: rgb(175, 175, 228);
-            }
-
-            .test-div {
-                align-content: center;
-                text-align: center;
-                padding: 5px;
-                margin: auto;
-            }
-
-            /*#####################KEYFRAMES#################################*/
-            /*#####################KEYFRAMES#################################*/
-            /*#####################KEYFRAMES#################################*/
-            /* keyframes syntax:
-                @keyframes animationname {
-                    keyframes-selector {css-styles;}
-                }*/
-            @keyframes animator-text-transform{
-                from {text-transform: capitalize;}
-                28% {text-transform: lowercase;}
-                42% {text-transform: none;}
-                56% {text-transform: uppercase;}
-                70% {text-transform: inherit;}
-                84% {text-transform: initial;}
-                to {text-transform: unset;}
-            }
-
-            @keyframes enlarge-selection {
-                0%{
-                    position: relative;
-                    box-shadow: 0px 0px 0px 0px black;
-                    bottom: 0;
-                }
-                100%{
-                    box-shadow: 0px 5px 5px 5px black;
-                    bottom: 7px;
-                }
+            .selector {
+                background-color: gold;
             }
         </style>
     </head>
@@ -171,16 +21,19 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     <body>
         
         <main>
-            <h1 id="warning" style="color: red;">(PLEASE CREATE STYLE VALUES ANIMATOR)</h1>
+            <div class="top">
 
-            <hr>
-
-            <h2 class="titles">Cat Photo App</h2>
-            
-            <a href="#">
-                <img id="cat-image" class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
-            </a>
-            <p>Click here to view more <a href="#footer">Go to Bottom</a>.</p>
+                <h1 id="warning">(EXPERIMENTING)</h1>
+                
+                <hr>
+                
+                <h2 class="titles">Cat Photo App</h2>
+                
+                <a href="#">
+                    <img id="cat-image" class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+                </a>
+                <p>Click here to view more <a href="#footer">Go to Bottom</a>.</p>
+            </div>
             
             
             <div class="silver-background">
@@ -209,81 +62,11 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                 <button type="submit">Submit</button>
             </form>
 
-            <div class="test-div">
-                <div class="test-div">
-                    <div class="test-div">
-                        <div class="test-div">
-                            <div class="test-div">
-                                <div class="test-div">
-                                    <div class="test-div">
-                                        <div class="test-div">
-                                            <div class="test-div">
-                                                <div class="test-div">
-                                                    <div class="test-div">
-                                                        <div class="test-div">
-                                                            <div class="test-div">
-                                                                <div class="test-div">
-                                                                    <div class="test-div">
-                                                                        <div class="test-div">
-                                                                            <div class="test-div">
-                                                                                <div class="test-div">
-                                                                                    <div class="test-div">
-                                                                                        <div class="test-div">
-                                                                                            <div class="test-div">
-                                                                                                <div class="test-div">
-                                                                                                    <div class="test-div">
-                                                                                                        <div class="test-div">
-                                                                                                            <div class="test-div">
-                                                                                                                <div class="test-div">
-                                                                                                                    <div class="test-div">
-                                                                                                                        <div class="test-div">
-                                                                                                                            <div class="test-div">
-                                                                                                                                <div class="test-div">
-                                                                                                                                    <div class="test-div">
-                                                                                                                                        <div class="test-div">
-                                                                                                                                            <div class="test-div">
-                                                                                                                                                <div class="test-div">
-                                                                                                                                                    <div class="test-div">
-                                                                                                                                                        <div class="test-div">
-                                                                                                                                                            <div class="test-div"><p> PYRAMID </p></div>
-                            
-                                                                                                                                                        </div>
-                                                                                                                                                    </div>
-                                                                                                                                                </div>
-                                                                                                                                            </div>
-                                                                                                                                        </div>
-                                                                                                                                    </div>
-                                                                                                                                </div>
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <a href="https://www.w3schools.com/css/css_pseudo_classes.asp">
+                <img id="all-pseudo-class-image" src="all css pseudo-class selectors.png">
+            </a>
         </main>
+        <div id="moon"></div>
         <footer id="footer">Copyrights</footer>
     </body>
 </html>

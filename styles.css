@@ -1,0 +1,205 @@
+/*
+###Selectors (syntax):
+    !Should be like a language (a :first-child li inside a hovered div = div:hover li:first-child)
+
+    >class                                      .<class-name>
+    >element                                    <element-name> 
+    >attr value                                 [<attr-name> = "<value-name>"]
+    >id                                         #<id-value>
+    >(P)generally inside another element(V)     div p {}
+    >(P)Is a child of another element           div > p {}
+    >element(p) after an element(div) (sibling) div + p {}
+    >all (p)siblings(of div) but after it       div ~ p {}
+    >pseudo-classes syntax: 
+        selector:pseudo-class {
+        property: value; }
+    >element with classname                     a.classname {}
+    >p element inside a div being hovered       div:hover p {}
+
+###Conflicting styles(priority):
+    >!important declarations first (color: red !important;)
+    >inline styles
+    >CSS styles
+        CSS declaration sequence
+            latest declaration first
+        Selectors
+            id
+            class
+            inheritance
+
+###CSS Syntaxes:
+    >animation: name duration timing-function delay iteration-count 
+    direction fill-mode play-state;
+    >box-shadow offset-x, offset-Y, blur-radius, spread-radius, color
+    >selector1, selectorn { styling;}
+    >background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
+*/
+
+.class1, .class2, #id1, .etc {
+    color: red;
+}
+
+:root {
+    --cat-image-border-color: rgb(162, 247, 25);
+    --testVarBorder: 0px;
+    --border-type: solid;
+}
+
+/*moving media query above will not follow variable new value*/
+@media (max-width: 350px) {
+    :root {
+        --cat-image-border-color: rgb(25, 247, 217);
+    }
+
+    #cat-image {
+        border-radius: 25%;
+        position: absolute;
+        z-index: 3;
+    }    
+}
+
+
+* {
+    /*variables set at root can be overwritten*/
+    --testVarBorder: 0px;
+
+    /*Double declaration for browser compatibilty - most compatible first*/
+    border: red solid 0px;
+}
+
+.top {
+    background: repeating-linear-gradient(45deg, yellow 0px, black 30px, blue 30px, black 60px);
+    
+}
+
+div:first-child {
+    align-content: center;
+    text-align: center;
+}
+
+
+a:hover,div:hover *:hover {
+    position: relative;
+    animation: enlarge-selection 0.5s forwards;
+    background: linear-gradient(30deg,red,green,yellow,cyan,violet,orange,indigo);
+}
+
+li:first-child:hover {
+    background-color: purple;
+}
+
+#all-pseudo-class-image {
+    border: 2px solid black;
+}
+
+#warning {
+    top: 0px;
+    color: red;
+}
+
+
+.all2 {
+    margin: 3px 3px 3px 3px;
+    border-bottom: 3px;
+    padding: 0em;
+    padding-top: 1cm;
+    margin: 20px 10px 20px 10px;
+    text-decoration: underline;
+}
+
+#cat-image {
+    border-color: var(--cat-image-border-color);
+    box-shadow: -5px 5px 5px 5px black, 10px 5px 5px 5px blue;
+    opacity: 0.5;
+}
+
+#cat-image:hover {
+    transform: scale(1.5);
+}
+
+
+body {
+    font-family: Lobster;
+    background: url("https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png");
+}
+
+.titles{
+    color: rgb(192, 224, 48);
+}
+.semi-title{
+    color: rgb(30, 180, 185);
+    font-family: Lobster, monospace;
+}
+p {
+    font-size: 16px;
+}
+
+.smaller-image{
+    width: 100px;
+    border-radius: 50%;
+}
+
+.thick-green-border {
+    border-color:green;
+    border-width: 10px;
+    border-style: solid;
+}
+
+.silver-background {
+    background-color: silver;
+}
+
+#cat-photo-form {
+    background-color:rgba(0, 0, 255, 128);
+}
+
+[href="#footer"] {
+    background-color: rgb(175, 175, 228);
+}
+
+.test-div {
+    align-content: center;
+    text-align: center;
+    padding: 5px;
+    margin: auto;
+}
+
+#moon {
+    position: fixed;
+    width: 2cm;
+    height: 2cm;
+    background-color: transparent;
+    bottom: 10px;
+    right: 25px;
+    box-shadow: 25px 10px 0px 0px black;
+    border-radius: 50%;
+}
+
+/*#####################KEYFRAMES#################################*/
+/*#####################KEYFRAMES#################################*/
+/*#####################KEYFRAMES#################################*/
+/* keyframes syntax:
+    @keyframes animationname {
+        keyframes-selector {css-styles;}
+    }*/
+@keyframes animator-text-transform{
+    from {text-transform: capitalize;}
+    28% {text-transform: lowercase;}
+    42% {text-transform: none;}
+    56% {text-transform: uppercase;}
+    70% {text-transform: inherit;}
+    84% {text-transform: initial;}
+    to {text-transform: unset;}
+}
+
+@keyframes enlarge-selection {
+    0%{
+        position: relative;
+        box-shadow: 0px 0px 0px 0px black;
+        bottom: 0;
+    }
+    100%{
+        box-shadow: 0px 5px 5px 5px black;
+        bottom: 7px;
+    }
+}
