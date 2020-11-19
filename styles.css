@@ -59,7 +59,7 @@
 }
 
 
-* {
+body * {
     /*variables set at root can be overwritten*/
     --testVarBorder: 0px;
 
