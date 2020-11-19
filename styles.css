@@ -107,6 +107,36 @@ li:first-child:hover {
     text-decoration: underline;
 }
 
+#heart {
+    background-color: red;
+    position: fixed;
+    top: 0.5cm;
+    left: 0.5cm;
+    height: 1cm;
+    width: 1cm;
+    transform: rotate(-135deg);
+}
+#heart::after {
+    content: "";
+    background-color: red;
+    position: fixed;
+    border-radius: 50%;
+    top: 0cm;
+    left: 0.5cm;
+    height: 1cm;
+    width: 1cm;
+}
+#heart::before {
+    content: "";
+    background-color: red;
+    position: fixed;
+    border-radius: 50%;
+    top: 0.5cm;
+    left: 0cm;
+    height: 1cm;
+    width: 1cm;
+}
+
 #cat-image {
     border-color: var(--cat-image-border-color);
     box-shadow: -5px 5px 5px 5px black, 10px 5px 5px 5px blue;
