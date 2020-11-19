@@ -18,21 +18,31 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXZZ
     </head>
     
     <body>
-        
-        <main>
-            <div class="top">
-
+        <header>
                 <h1 id="warning">(EXPERIMENTING)</h1>
-                
-                <hr>
-                
-                <h2 class="titles">Cat Photo App</h2>
-                
-                <a href="#">
-                    <img id="cat-image" class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
-                </a>
-                <p>Click here to view more <a href="#footer">Go to Bottom</a>.</p>
-            </div>
+                <div class="top">
+        
+                    <hr>
+                    
+                    <h2 class="titles">Cat Photo App</h2>
+                    
+                    <a href="#">
+                        <img id="cat-image" class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+                    </a>
+                </div>
+                <nav>
+                    <a href="">Home</a> 
+                    <a href="">Services</a> 
+                    <a href="">Products</a> 
+                    <a href="">Credits</a> 
+                </nav>
+        </header>
+
+        <article>
+
+        </article>
+
+        <main>
             
             
             <div class="silver-background">
@@ -50,24 +60,46 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXZZ
                 </ol>
             </div>
             
-            <!--Conflicting background color but id is prioritized-->
-            <form class="silver-background" id="cat-photo-form" action="https://freecatphotoapp.com/submit-cat-photo">
-                <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
-                <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label><br>
-                <label for="loving"><input id="loving" type="checkbox" name="personality" value="loving" checked> Loving</label>
-                <label for="lazy"><input id="lazy" type="checkbox" name="personality" value="lazy"> Lazy</label>
-                <label for="energetic"><input id="energetic" type="checkbox" name="personality" value="energetic"> Energetic</label><br>
-                <input type="text" placeholder="cat photo URL" required>
-                <button type="submit">Submit</button>
-            </form>
+            <section>
 
-            <a href="https://www.w3schools.com/css/css_pseudo_classes.asp">
-                <img id="all-pseudo-class-image" src="all css pseudo-class selectors.png">
-            </a>
+                <!--Conflicting background color but id is prioritized-->
+                <form class="silver-background" id="cat-photo-form" action="https://freecatphotoapp.com/submit-cat-photo">
+                    <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
+                    <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label><br>
+                    <label for="loving"><input id="loving" type="checkbox" name="personality" value="loving" checked> Loving</label>
+                    <label for="lazy"><input id="lazy" type="checkbox" name="personality" value="lazy"> Lazy</label>
+                    <label for="energetic"><input id="energetic" type="checkbox" name="personality" value="energetic"> Energetic</label><br>
+                    <input type="text" placeholder="cat photo URL" required>
+                    <button type="submit">Submit</button>
+                </form>
+                
+                <figure>
+                    <a href="https://www.w3schools.com/css/css_pseudo_classes.asp">
+                        <img id="all-pseudo-class-image" src="all css pseudo-class selectors.png">
+                    </a>
+                    <figcaption>all css pseudo-class selectors</figcaption>
+                </figure>
+
+            </section>
         </main>
+
+        <article>
+
+        </article>
+
         <div id="moon"></div>
         <div id="heart"></div>
-        <footer id="footer">Copyrights</footer>
+        <article>
+            <h2>The one who is lorem ipsum dolor</h2>
+        </article>
+
+        <footer id="footer">
+            <audio controls>
+                <source src="https://s3.amazonaws.com/freecodecamp/screen-reader.mp3" type="audio/mpeg">
+            </audio>
+            <p>Click here to view more <a href="#footer">Go to Bottom</a>.</p>
+            <p>Copyrights</p>
+        </footer>
     </body>
 </html>
 

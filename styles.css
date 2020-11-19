@@ -59,12 +59,38 @@
 }
 
 
+nav > a {
+    display: inline-block;
+    color: black;
+    padding: 0% 0.8%;
+    background: linear-gradient(90deg,black,cyan,cyan,cyan,cyan,black);
+}
+
+figcaption {
+    text-transform: capitalize;
+    background-color: blue !important;
+    text-align: center;
+    margin: auto;
+}
+
+figure {
+    position: relative;
+    background-color: pink;
+}
+
+header {
+    background: url("https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png");
+    align-content: center;
+    text-align: center;
+}
+
 body * {
     /*variables set at root can be overwritten*/
     --testVarBorder: 0px;
 
     /*Double declaration for browser compatibilty - most compatible first*/
     border: red solid 0px;
+    background-color: rgb(46, 46, 46);
 }
 
 .top {
@@ -72,9 +98,13 @@ body * {
     
 }
 
+article h6, article h5, article h4, article h3, article h2, article h1 {
+    text-transform: capitalize;
+    color: black;
+}
+
 div:first-child {
-    align-content: center;
-    text-align: center;
+    background-color: lightgray;
 }
 
 
@@ -95,6 +125,9 @@ li:first-child:hover {
 #warning {
     top: 0px;
     color: red;
+    font-family: Lobster;
+    text-align: center;
+    align-content: center;
 }
 
 
@@ -149,8 +182,7 @@ li:first-child:hover {
 
 
 body {
-    font-family: Lobster;
-    background: url("https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png");
+    
 }
 
 .titles{
@@ -187,13 +219,6 @@ p {
     background-color: rgb(175, 175, 228);
 }
 
-.test-div {
-    align-content: center;
-    text-align: center;
-    padding: 5px;
-    margin: auto;
-}
-
 #moon {
     position: fixed;
     width: 2cm;
@@ -201,7 +226,7 @@ p {
     background-color: transparent;
     bottom: 10px;
     right: 25px;
-    box-shadow: 25px 10px 0px 0px black;
+    box-shadow: 25px 10px 0px 0px white;
     border-radius: 50%;
 }
 
