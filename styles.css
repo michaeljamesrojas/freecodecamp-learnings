@@ -1,4 +1,4 @@
-/*
+/*freecodecamp-responsive-web-design-certification-learnings
 ###Selectors (syntax):
     !Should be like a language (a :first-child li inside a hovered div = div:hover li:first-child)
 
@@ -43,6 +43,7 @@
     --cat-image-border-color: rgb(162, 247, 25);
     --testVarBorder: 0px;
     --border-type: solid;
+    --heart-color:rgba(0, 0, 0, 0.521);
 }
 
 /*moving media query above will not follow variable new value*/
@@ -58,6 +59,11 @@
     }    
 }
 
+*:hover {
+    border-width: 1px;
+    border-style: solid;
+    border-color: gray;
+}
 
 nav > a {
     display: inline-block;
@@ -73,9 +79,22 @@ figcaption {
     margin: auto;
 }
 
+legend {
+    border: 1px rgb(0, 0, 0) solid;
+    background-color: rgba(172, 255, 47, 0.534);
+    border-radius: 20%;
+}
+
 figure {
     position: relative;
     background-color: pink;
+    align-content: center;
+    text-align: center;
+}
+
+#copyrights {
+    align-content: center;
+    text-align: center;
 }
 
 header {
@@ -90,7 +109,6 @@ body * {
 
     /*Double declaration for browser compatibilty - most compatible first*/
     border: red solid 0px;
-    background-color: rgb(46, 46, 46);
 }
 
 .top {
@@ -100,7 +118,7 @@ body * {
 
 article h6, article h5, article h4, article h3, article h2, article h1 {
     text-transform: capitalize;
-    color: black;
+    color: white;
 }
 
 div:first-child {
@@ -140,8 +158,12 @@ li:first-child:hover {
     text-decoration: underline;
 }
 
+fieldset {
+    background-color: rgba(0, 255, 221, 0.342);
+}
+
 #heart {
-    background-color: red;
+    background-color: var(--heart-color);
     position: fixed;
     top: 0.5cm;
     left: 0.5cm;
@@ -151,7 +173,7 @@ li:first-child:hover {
 }
 #heart::after {
     content: "";
-    background-color: red;
+    background-color: var(--heart-color);
     position: fixed;
     border-radius: 50%;
     top: 0cm;
@@ -161,7 +183,7 @@ li:first-child:hover {
 }
 #heart::before {
     content: "";
-    background-color: red;
+    background-color: var(--heart-color);
     position: fixed;
     border-radius: 50%;
     top: 0.5cm;
@@ -180,10 +202,6 @@ li:first-child:hover {
     transform: scale(1.5);
 }
 
-
-body {
-    
-}
 
 .titles{
     color: rgb(192, 224, 48);
@@ -207,14 +225,6 @@ p {
     border-style: solid;
 }
 
-.silver-background {
-    background-color: silver;
-}
-
-#cat-photo-form {
-    background-color:rgba(0, 0, 255, 128);
-}
-
 [href="#footer"] {
     background-color: rgb(175, 175, 228);
 }
@@ -226,7 +236,7 @@ p {
     background-color: transparent;
     bottom: 10px;
     right: 25px;
-    box-shadow: 25px 10px 0px 0px white;
+    box-shadow: 25px 10px 0px 0px black;
     border-radius: 50%;
 }
 
