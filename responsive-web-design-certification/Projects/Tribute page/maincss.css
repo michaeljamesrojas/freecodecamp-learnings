@@ -46,9 +46,9 @@ footer {
 }
 
 #navigator {
-    heigh
-    align-content: center;
-    align-content: center;
+    align-items: center;
+    text-align: left;
+    align-content: left;
     grid-area: extra;
     position: sticky;
     top: 0px;
@@ -59,9 +59,6 @@ footer {
     animation: floating 3.5s infinite;
 }
 
-#title {
-
-}
 
 #gTitle {
     min-height: fit-content;
