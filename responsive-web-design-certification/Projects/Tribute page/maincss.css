@@ -4,25 +4,74 @@
     --title-shadow-color: gray;
 }
 
+*:hover {
+    outline: 1px solid red;
+}
+
 body {
     text-align: center;
     align-content: center;
-    grid-template-areas: ;
+    
+    display: grid;
+    grid-template-areas: 
+    "head head"
+    "extra body"
+    "extra foot";
 }
 
-#gTitle:hover * {
-    animation: fade 0.3s forwards;
+p {
+    margin-top: 0px;
+    width: fit-content;
 }
 
-#gTitle h1, #gTitle p{
+h1 {
+    margin-bottom: 0px;
+}
+
+
+header {
+    background-color: rgb(196, 196, 196);
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    grid-area: head;
+    position: relative;
+}
+
+main {
+    grid-area: body;
+}
+
+footer {
+    grid-area: foot;
+}
+
+#navigator {
+    heigh
+    align-content: center;
+    align-content: center;
+    grid-area: extra;
+    position: sticky;
+    top: 0px;
+}
+
+
+#gTitle h1 {
     animation: floating 3.5s infinite;
 }
 
-#gTitle {
-    position: relative;
-    top: 400px;
+#title {
+
 }
 
+#gTitle {
+    min-height: fit-content;
+}
+
+img {
+    max-width: 768px;
+    min-width: auto;
+    height: auto;
+}
 
 @keyframes fade {
     0% { opacity: 1;}
