@@ -57,10 +57,10 @@ main {
     margin-right: var(--page-sides-margin);
 }
 
-#img-div {
-    /* display: inline-block; */
-    /* background-color: blue; */
-}
+/* #img-div {
+    display: inline-block;
+    background-color: blue;
+} */
 
 #img-figure {
     display: inline-block;
