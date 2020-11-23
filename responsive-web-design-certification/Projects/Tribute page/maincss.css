@@ -1,16 +1,19 @@
 :root {
     --header-text-colors: rgb(204, 255, 255);
     --header-background-colors: rgb(0, 88, 88);
+    --header-background: linear-gradient(0deg, rgb(0, 94, 94),rgb(0, 151, 151));
     --floating-shadow-radius: 4px;
     --floating-shadow-distance: 10px;
     --floating-distance:10px;
     --title-shadow-color: rgb(0, 0, 0);
     --body-background: rgb(255, 255, 255);
     --default-text-colors: black;
-    --navigator-background-color:rgb(95, 189, 189);
-    --main-background: linear-gradient(180deg, rgba(0, 0, 0, 0.76), rgb(158, 255, 255), rgb(90, 134, 134), rgb(0, 0, 0));
-    --navigator-links-hover-color: rgb(143, 255, 255);
-    --subtopics-background-color: rgb(154, 224, 224);
+    /* --main-background: linear-gradient(180deg, rgb(206, 255, 255), rgb(139, 185, 185)); */
+    --main-background-color: rgb(225, 255, 255);
+    /* --navigator-background-color:rgb(95, 189, 189); */
+    --navigator-links-hover-color: rgba(173, 255, 255, 0.651);
+    --navigator-background: linear-gradient(90deg, rgb(75, 175, 175),rgb(137, 206, 206) );
+    --subtopics-background-color: rgb(185, 247, 247);
     --page-sides-margin: 0.5em;
 }
 
@@ -26,11 +29,11 @@ body {
     background-color: var(--body-background);
 
     display: grid;
-    grid-template-columns: 10em 1fr;
+    grid-template-columns: 9em 1fr;
     grid-template-areas: 
     "head head"
     "extra body"
-    "foot foot";
+    "extra foot";
 }
 
 header {
@@ -39,29 +42,38 @@ header {
     width: 100%;
     color: var(--header-text-colors);
     background-color: var(--header-background-colors);
+    background: var(--header-background);
     grid-area: head;
     margin-bottom: 0.3em;
+    box-shadow: 0px 3px 4px 0px black;
+    z-index: 100;
 }
 
 main {
     grid-area: body;
-    background: var(--main-background);
+    background-color: var(--main-background-color);
+    /* background: var(--main-background); */
     border-top-right-radius: 2em;
     margin-right: var(--page-sides-margin);
 }
 
 footer {
     grid-area: foot;
+    /* background-color: var(--header-background-colors); */
+    background: var(--header-background);
+    color: var(--header-text-colors);
 }
 
-footer {
-    background-color: var(--header-background-colors);
+footer a{
+    color: var(--header-text-colors);
+    text-decoration: underline;
 }
 
 #navigator {
     border-top-left-radius: 2em;
     border-bottom-left-radius: 2em;
     background-color: var(--navigator-background-color);
+    background: var(--navigator-background);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,6 +93,8 @@ footer {
     padding-bottom: 1em;
     box-shadow: -0.1em 0.1em 0.1em black;
     margin-bottom: 0.1em;
+    font-size: 1.09em;
+    color: rgb(0, 0, 0);
 }
 
 a {
@@ -121,7 +135,7 @@ p {
 
 figcaption {
     padding: 0.5em;
-    font-weight: 1em;
+    font-size: 1.2em;
 }
 
 #gTitle #title {
@@ -134,7 +148,8 @@ figcaption {
 }
 
 img {
-    border-radius: 100%;
+    /* border-radius: 100%; */
+    border-radius: 1em;
     box-shadow: 3px 5px 5px black;
     max-width: 767px;
     width: 100%;
