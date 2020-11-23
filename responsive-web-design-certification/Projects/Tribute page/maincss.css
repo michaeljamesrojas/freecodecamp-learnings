@@ -57,6 +57,16 @@ main {
     margin-right: var(--page-sides-margin);
 }
 
+#img-div {
+    /* display: inline-block; */
+    /* background-color: blue; */
+}
+
+#img-figure {
+    display: inline-block;
+    /* background-color: red; */
+}
+
 footer {
     grid-area: foot;
     /* background-color: var(--header-background-colors); */
@@ -93,7 +103,8 @@ footer a{
     padding-bottom: 1em;
     box-shadow: -0.1em 0.1em 0.1em black;
     margin-bottom: 0.1em;
-    font-size: 1.09em;
+    /* font-size: 1.09em; */
+    font-weight: 1000;
     color: rgb(0, 0, 0);
 }
 
@@ -147,12 +158,10 @@ figcaption {
     min-height: fit-content;
 }
 
-img {
-    /* border-radius: 100%; */
+#image {
     border-radius: 1em;
     box-shadow: 3px 5px 5px black;
-    max-width: 767px;
-    width: 100%;
+    max-width: 100%;
 }
 
 @keyframes fade {
